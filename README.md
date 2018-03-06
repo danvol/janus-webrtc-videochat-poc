@@ -1,2 +1,3 @@
 # janus-webrtc-videochat-poc
-Janus WebRTC Gateway Video, Text Chat POC
+Video, Text Chat POC Based on:
+Janus WebRTC Gateway - meetecho/janus-gateway[https://github.com/meetecho/janus-gateway]
