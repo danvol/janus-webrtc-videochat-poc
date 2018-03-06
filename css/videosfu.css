@@ -1,0 +1,33 @@
+/* 
+table, th, td {
+  text-align: center;
+  border: 1px solid black;
+}
+*/
+
+.container {
+  display: grid;
+  /* Display as a Grid */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* repeat = as many times as you can fit */
+  /* auto-fit = fit as many items on the line as possible, go bigger if you need to */
+  /*minmax = (min size, max size) = the minimum size the column should be is 200px, but if there's space then give them all 1fr of that width. */
+  /* grid-template-columns: repeat(auto-fit, minmax(490px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(330px, 2fr)); */
+  grid-template-columns: repeat(2, minmax(330px, 480px));
+  /* grid-template-columns: 1fr 1fr; */
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.item {
+  background-color: lightgreen;
+  width: auto;
+  height: 320px;
+  text-align: center;
+}
+
+#videolocal, #videoremote1, #videoremote2, #videoremote3 {
+  width: 320px; 
+  height: 240px; 
+}

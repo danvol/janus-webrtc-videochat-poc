@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Janus WebRTC: Video+Text ChatRoom</title>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script -->
+<!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script -->
+<!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script -->
+<script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="lib/bootstrap-3.3.7.js"></script>
+<script type="text/javascript" src="lib/bootbox-4.4.0.js"></script>
+<!-- <script type="text/javascript" src="js/janus.nojquery.js" ></script> -->
+<script type="text/javascript" src="js/janus.js" ></script>
+<script type="text/javascript" src="js/videotextchat.js"></script>
+<!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.css" type="text/css"/ -->
+<link rel="stylesheet" href="css/bootswatch-cerulean-bootstrap.3.3.7.css" type="text/css"/>
+<link rel="stylesheet" href="css/videotextchat.css" type="text/css"/>
+</head>
+
+<body>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h2>Video+Text ChatRoom
+				<button class="btn btn-default" autocomplete="off" id="start">Start</button>
+			  </h2>		
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container hide" id="roomjoin">
+	<div class="row">
+		<span class="label label-info" id="you"></span>
+		<div class="col-md-12" id="controls">
+			<div class="input-group margin-bottom-md" id="registernow">
+				<input class="form-control" type="text" placeholder="Input your display name" autocomplete="off" id="username" onkeypress="return checkEnter(this, event);"></input>
+				<span class="input-group-btn">
+				<button class="btn btn-success" autocomplete="off" id="register">Register/Join the room</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="item">
+						<h3 class="panel-title">My Video <span class="label label-primary hide" id="publisher"></span></h3>
+						<!-- video id="videolocal" width="320" height="240" autoplay muted></video -->
+						<video id="videolocal" autoplay muted></video>
+					</div>  
+				</div>
+		  	<div class="col-md-6">
+					<div class="item">
+						<h3 class="panel-title">Remote Video #1 <span class="label label-info hide" id="remote1"></span></h3>
+						<!-- video id="videoremote1" width="320" height="240" autoplay muted></video -->
+						<video id="videoremote1" autoplay muted></video>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="item">
+						<h3 class="panel-title">Remote Video #2 <span class="label label-info hide" id="remote2"></span></h3>
+						<!--video id="videoremote2" width="320" height="240" autoplay muted></video -->
+						<video id="videoremote2" autoplay muted></video>
+					</div>
+				</div>
+		  	<div class="col-md-6">
+					<div class="item">
+						<h3 class="panel-title">Remote Video #3 <span class="label label-info hide" id="remote3"></span></h3>
+						<!-- video id="videoremote3" width="320" height="240" autoplay muted></video -->
+						<video id="videoremote3" autoplay muted></video>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Participants <span class="label label-primary hide" id="participant"></span></h3>
+						</div>
+						<div class="panel-body">
+							Click name to send private message
+							<!-- ul id="list" class="list-group" -->
+							<ul id="list" class="list-inline">
+							</ul>
+						</div>
+					</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Public Chatroom</span></h3>
+				</div>
+				<div class="panel-body relative" style="overflow-x: auto;" id="chatroom">
+				</div>
+				<div class="panel-footer">
+					<div class="input-group margin-bottom-sm">
+						<span class="input-group-addon"><i class="fa fa-cloud-upload fa-fw"></i></span>
+						<input class="form-control" type="text" placeholder="Write a chatroom message" autocomplete="off" id="datasend" onkeypress="return checkEnter(this, event);" disabled></input>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

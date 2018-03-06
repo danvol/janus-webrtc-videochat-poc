@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<title>Janus WebRTC: VideoSFU </title>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<!-- <script type="text/javascript" src="janus.nojquery.js" ></script> -->
+<script type="text/javascript" src="js/janus.js" ></script>
+<script type="text/javascript" src="js/videosfu.js"></script>
+<link rel="stylesheet" href="css/videosfu.css" type="text/css"/>
+</head>
+
+<body>
+
+	<center>
+		<div class="header">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h2>Video ChatRoom - VideoSFU
+						<button id="start">Start</button>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="input-group margin-bottom-md hide" id="registernow">
+			<input class="form-control" autocomplete="off" type="text" placeholder="Input your display name" id="username" onkeypress="return checkEnter(this, event);"></input>
+			<button class="btn btn-success" autocomplete="off" id="register">Register/Join the room</button>
+		</div>
+	</center>
+		
+<br>
+
+<div class="container">
+  <div class="item">
+		<h3 class="panel-title">My Video <span class="label label-primary hide" id="publisher"></span></h3>
+		<video id="videolocal" width="320" height="240" autoplay muted></video>
+		<!-- video id="videolocal" width="480" height="320" autoplay muted></video -->
+	</div>
+  <div class="item">
+		<h3 class="panel-title">Remote Video #1 <span class="label label-info hide" id="remote1"></span></h3>
+		<!-- video id="videoremote1" width="320" height="240" autoplay muted></video -->
+		<video id="videoremote1" width="480" height="320" autoplay muted></video>
+	</div>
+  <div class="item">
+		<h3 class="panel-title">Remote Video #2 <span class="label label-info hide" id="remote2"></span></h3>
+		<!--video id="videoremote2" width="320" height="240" autoplay muted></video -->
+		<video id="videoremote2" width="480" height="320" autoplay muted></video>
+	</div>
+  <div class="item">
+		<h3 class="panel-title">Remote Video #3 <span class="label label-info hide" id="remote3"></span></h3>
+		<!-- video id="videoremote3" width="320" height="240" autoplay muted></video -->
+		<video id="videoremote3" width="480" height="320" autoplay muted></video>
+	</div>
+</div>
+
+</body>
+</html>
